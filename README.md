@@ -57,8 +57,8 @@
   <h1>Welcome to ChopinCraft</h1>
 
   <div class="server-info">
-    <p><strong>Server IP:</strong> <span class="ip">play.chopincraft.net</span></p>
-    <p><strong>Port:</strong> 25565</p>
+    <p><strong>Server IP:</strong> <span class="ip">play.PGoD.net</span></p>
+    <p><strong>Port:</strong> 25575</p>
     <p><strong>Version:</strong> Minecraft 1.20.4</p>
     
     <div class="status">
