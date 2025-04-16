@@ -1,26 +1,5 @@
 # Bedrock-server
-from flask import Flask, render_template, request, redirect
-import subprocess
-
-app = Flask(__name__)
-
-@app.route('/', methods=['GET'])
-def index():
-    return render_template('index.html')
-
-@app.route('/start', methods=['POST'])
-def start_server():
-    subprocess.Popen(['start_server.bat'], shell=True)
-    return redirect('/')
-
-@app.route('/stop', methods=['POST'])
-def stop_server():
-    subprocess.call(['stop_server.bat'], shell=True)
-    return redirect('/')
-
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -50,6 +29,15 @@ if __name__ == '__main__':
       color: #00e0ff;
       font-weight: bold;
     }
+    .status {
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 8px;
+      display: inline-block;
+      font-weight: bold;
+      background-color: {{ '#007f00' if status == 'Online' else '#7f0000' }};
+      color: white;
+    }
     form {
       margin-top: 20px;
     }
@@ -72,6 +60,10 @@ if __name__ == '__main__':
     <p><strong>Server IP:</strong> <span class="ip">play.chopincraft.net</span></p>
     <p><strong>Port:</strong> 25565</p>
     <p><strong>Version:</strong> Minecraft 1.20.4</p>
+    
+    <div class="status">
+      Server Status: {{ status }}
+    </div>
 
     <form method="post" action="/start">
       <button type="submit">Start Server</button>
