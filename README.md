@@ -59,7 +59,7 @@
   <div class="server-info">
     <p><strong>Server IP:</strong> <span class="ip">play.PGoD.net</span></p>
     <p><strong>Port:</strong> 25575</p>
-    <p><strong>Version:</strong> Minecraft 1.20.4</p>
+    <p><strong>Version:</strong> Minecraft 1.21.72</p>
     
     <div class="status">
       Server Status: {{ status }}
